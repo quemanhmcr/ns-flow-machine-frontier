@@ -1,34 +1,43 @@
-# Status
+# Research status
 
-## Exact / retained
+## Closed structural chain
 
-- Navier–Stokes rotational form: \(u_t=J_uCu-\nu C^2u\).
-- Centered two-road form: \(u_t=J_ur-\nu C^2u\).
-- Fixed-basis Cartan amplitude law.
-- Euler normal-acceleration identities.
-- Physical four-quadrant one-step sign witness.
-- Exact full two-step signed-curl-gap coefficient.
-- Bracket-level weighted Jacobi identity.
-- Fourier diamond carrier-location identity.
-- Galilean low-frequency suppression.
-- Sharp physical-triangle law \(M^2F_{\log}\le Q_\triangle\).
-- Exact scalar-triple escape action.
-- Escape necessity: \(K/E\to\infty\Rightarrow\int\mathcal A_{escape}=\infty\).
+The project has reduced critical escape to the exact two-road Navier–Stokes geometry: fixed Cartan Euler current plus diagonal quadratic heat.  One-step sign monotonicity, a global `10/13` loss law, and a full-Euler companion theorem from Jacobi alone are all ruled out.
 
-## Falsified / forbidden shortcuts
-
-- one-step self-turning sign theorem;
-- global fixed-loss \(10/13\) theorem;
-- Jacobi \(\Rightarrow\) comparable full-Euler companion theorem;
-- gross positive triad-curvature budget;
-- scalar orientation-free closure.
-
-## Open
-
-Prove a representation-free positive composition theorem strong enough to imply
+The sharp one-step physical law remains
 
 \[
-\int_0^T\mathcal A_{\mathrm{escape}}(u(t))\,dt<\infty
+M^2F_{\log}\le Q_\triangle,
 \]
 
-for every finite smooth positive-energy interval in the stated setting.
+so near-perfect retention is possible only with vanishing logarithmic scale displacement.
+
+## Latest exact reduction
+
+For the state-generated Krylov/Ritz frontier,
+
+\[
+\boxed{R_n'=2\rho_n^2\,[b_n-\nu(R_n+\beta_n)].}
+\]
+
+The key new point is `a_n=rho_n b_n`: Euler continuation and heat both carry the same quadratic opening `rho_n^2`.  At the critical frontier `R_1=m=K/E`,
+
+\[
+\boxed{m'=2\sigma^2[b_1-\nu(m+\beta)]},
+\qquad
+b_1=\frac{\operatorname{Cov}_\mu(r,g)}{\operatorname{Var}_\mu(r)}.
+\]
+
+## Remaining theorem
+
+It now suffices to prove
+
+\[
+\boxed{
+\int_0^T\frac{\sigma^2}{m}\,[b_1-\nu(m+\beta)]_+\,dt<\infty.
+}
+\]
+
+The exact nonlinear symbol for `b_n` retains the physical Cartan/Waleffe structure and is divisible by a same-helicity heat-rate difference.  What remains open is a cutoff-independent control of the coherent super-heat impedance, without introducing a representation-dependent sum of positive triad traffic.
+
+No global-regularity claim is made until this estimate is proved.
