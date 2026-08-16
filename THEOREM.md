@@ -133,74 +133,119 @@ The cost must be defined from the full PDE state/current, not from a positive-pa
 
 ---
 
-## Latest exact reduction: Krylov–Ritz impedance
+## Current minimal frontier: heat-depth positive composition
 
-Normalize `q=u/sqrt(E)` and let `mu` be the spectral measure of `Lambda=|C|` seen from `q`.  On
+The earlier `K/E` and Krylov/Ritz statements remain valid stronger diagnostics, but the current sufficient target is smaller.  Since
 
 \[
-\mathcal K_n=\operatorname{span}\{q,\Lambda q,\ldots,\Lambda^{n-1}q\},
+K'=2\kappa-2\nu M_3,
+\qquad M_3=\langle u,\Lambda^3u\rangle,
 \]
 
-let `R_n` be the top Ritz value, `v_n=p_n(Lambda)q` its normalized Ritz vector, and
-
 \[
-(\Lambda-R_n)v_n=\rho_n e_{n+1}.
-\]
-
-If `P_n` is the degree-`n` orthonormal polynomial of `mu`, Ritz orthogonality gives
-
-\[
-\boxed{(r-R_n)p_n(r)=\rho_nP_n(r).}
-\]
-
-With `f=F_E/sqrt(E)`, define
-
-\[
-Q_n(r)=\frac{P_n(r)^2}{r-R_n},
+\boxed{
+(\log K)'=\frac1{2\nu}\left[
+\mathcal A_K-\frac{(\kappa-2\nu M_3)^2}{KM_3}
+\right],
 \qquad
-b_n=\operatorname{Re}\langle Q_n(\Lambda)q,f\rangle,
+\mathcal A_K:=\frac{\kappa^2}{KM_3}.
+}
+\]
+
+Thus `int_0^T A_K dt < infinity` is sufficient to bound the critical norm `K`.
+
+Let
+
+\[
+H_s=e^{-s\Lambda^2},\quad U_s=H_su,\quad
+\tau_s=H_s(u\otimes u)-U_s\otimes U_s\succeq0,
+\]
+
+and
+
+\[
+D_s=E-\|U_s\|_2^2,\quad
+R_s=Z-\|\Lambda U_s\|_2^2,\quad
+W_s=\int\tau_s:\nabla U_s\,dx.
+\]
+
+With `c0=(2 sqrt(2 pi))^(-1)`, Balakrishnan gives the common-depth identities
+
+\[
+\boxed{
+K=c_0\int s^{-3/2}D_s\,ds,\qquad
+M_3=c_0\int s^{-3/2}R_s\,ds,\qquad
+\kappa=-c_0\int s^{-3/2}W_s\,ds,
+}
+\]
+
+where all heat-depth integrals are over `(0,infinity)`.  At each depth,
+
+\[
+\boxed{\partial_tD_s=-2W_s-2\nu R_s.}
+\]
+
+Set `A_s=nabla U_s` and
+
+\[
+\mathscr B_s=\int\operatorname{tr}(A_s^T\tau_sA_s)\,dx\ge0.
+\]
+
+Then
+
+\[
+\boxed{|W_s|^2\le D_s\mathscr B_s.}
+\]
+
+The stress obeys the exact Loewner/Germano laws
+
+\[
+\boxed{
+\partial_s\tau_s=\Delta\tau_s+2A_sA_s^T,
 \qquad
-\beta_n=\langle e_{n+1},\Lambda e_{n+1}\rangle.
-\]
-
-Then the Euler boundary speed has the compulsory extra opening `a_n=rho_n b_n`, and the full NS frontier law is
-
-\[
-\boxed{R_n'=2\rho_n^2\,[b_n-\nu(R_n+\beta_n)].}
-\]
-
-Thus Euler progress and heat use the same quadratic opening.  The canonical frontier polynomial satisfies
-
-\[
-\boxed{
-\int Q_n\,d\mu=0,\qquad
-\int rQ_n\,d\mu=1,\qquad
-\int r^2Q_n\,d\mu=R_n+\beta_n.
+\tau_{s+t}(u)=H_t\tau_s(u)+\tau_t(H_su).
 }
 \]
 
-At the critical frontier `n=1`, with
+If `V_s=||tau_s||_2^2` and `G_s=||nabla tau_s||_2^2`, then
 
 \[
-m=K/E,\qquad \sigma^2=Z/E-m^2,
+\mathscr B_s=\frac14V_s'+\frac12G_s.
 \]
 
-one has
-
-\[
-\boxed{
-Q_1(r)=\frac{r-m}{\sigma^2},\qquad
-b_1=\frac{\operatorname{Cov}_\mu(r,g)}{\operatorname{Var}_\mu(r)},\qquad
-m'=2\sigma^2[b_1-\nu(m+\beta)].
-}
-\]
-
-Here `g` is the actual Euler radial fitness: `Re<h(Lambda)q,f>=int h(r)g(r)dmu`.  Therefore it is sufficient to prove the weaker intrinsic frontier estimate
+Hence the intrinsic positive composition cost
 
 \[
 \boxed{
-\int_0^T\frac{\sigma^2}{m}\,[b_1-\nu(m+\beta)]_+\,dt<\infty.
+\mathfrak C(u):=\int s^{-3/2}\mathscr B_s\,ds
+=\frac38\int s^{-5/2}V_s\,ds
++\frac12\int s^{-3/2}G_s\,ds
 }
 \]
 
-This bounds `log(K/E)`.  In the fixed curl basis, `b_n` retains the Cartan/Waleffe cubic symbol and every physical triad contribution is divisible by a same-helicity quadratic-heat difference `r_k^2-r_j^2`; for `n=1` this is the Loewner heat commutator `(Lambda_L+Lambda_R)^(-1)[Lambda^2,J_q]`.  The unresolved step is cutoff-independent control of the coherent super-heat impedance without a gross positive triad budget.
+satisfies, after assembling the full current before Cauchy,
+
+\[
+\boxed{\mathcal A_K\le c_0\,\mathfrak C(u)/M_3.}
+\]
+
+The Germano cocycle is genuinely positive across heat depth:
+
+\[
+\boxed{
+\|\tau_{s+t}(u)\|_2^2\ge
+\|H_t\tau_s(u)\|_2^2+\|\tau_t(H_su)\|_2^2.
+}
+\]
+
+### Remaining theorem
+
+It is now sufficient to prove
+
+\[
+\boxed{
+\int_0^T\frac{\mathfrak C(u(t))}{M_3(t)}\,dt<\infty.
+}
+\]
+
+Heat-depth composition is already positive.  The unresolved step is cutoff-independent control of how the **actual Cartan/Jacobi Euler current** regenerates covariance toward `s=0` in physical time.  Ordinary energy dissipation alone cannot supply this critical bound by scaling.  No global-regularity claim is made until this estimate is proved.
