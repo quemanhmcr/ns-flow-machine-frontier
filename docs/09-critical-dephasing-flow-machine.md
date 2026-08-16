@@ -114,3 +114,49 @@ For one heterochiral Cartan block with signed curl eigenvalues `(-a,b,c)`, `a,b,
 }
 \]
 Thus a single triad is not isospectral: it can regenerate pair gain.  The inverse product `1/(abc)` shows explicitly that the spectral source is already resolvent weighted.  This rules out the tempting but false claim that only multi-triad diamonds can move the amplifier spectrum; Jacobi is needed to control coherent continuation, not to create the first spectral derivative.
+
+## 7. Quotient the isospectral orbit before paying memory
+
+The raw memory `mathcal H_mem` still overpays Euler motion that only rotates the eigenspaces of `mathbb B`.  Since `R=f(mathbb B)`, for every skew-adjoint cutoff operator `Omega`,
+\[
+\operatorname{Tr}\bigl(R[\Omega,\mathbb B]\bigr)=0.
+\]
+Let `Pi_0` denote projection onto the kernel of `L` (zero carrier).  Define the extended gauge-minimal secular memory
+\[
+\boxed{
+\mathcal H_{sec}:=
+\inf_{\substack{\Omega^*=-\Omega\\
+\Pi_0(\mathbb B_{F_E}+[\Omega,\mathbb B])=0}}
+\left\langle S_\Omega,L^{-1}S_\Omega\right\rangle_{HS},
+\qquad
+S_\Omega:=\mathbb B_{F_E}+[\Omega,\mathbb B].
+}
+\]
+If the constraint set is empty, the cost is `+infinity`; that failure is itself a dephasing-invisible infrared obstruction.
+
+For every admissible `Omega`, the entropy source is unchanged and the carrier Dirichlet integration by parts gives
+\[
+2\operatorname{Tr}(R\mathbb B_{F_E})
+=2\operatorname{Tr}(RS_\Omega)
+\le\frac\nu2\mathcal I_\Theta+
+\frac1\nu\langle S_\Omega,L^{-1}S_\Omega\rangle.
+\]
+Taking the infimum sharpens the flow-machine inequality to
+\[
+\boxed{
+\dot\Theta+
+\nu\frac{(\Theta+\Phi)^2}{\mathcal H_{IR}}
+\le\frac{\mathcal H_{sec}}\nu.
+}
+\]
+Thus only eigenvalue-changing Euler regeneration is charged.
+
+At an interior minimizer, set `V=L^{-1}S_{Omega_*}`.  Variation in skew `delta Omega` yields
+\[
+0=\langle V,[\delta\Omega,\mathbb B]\rangle_{HS},
+\]
+hence the weighted Coulomb/horizontal condition
+\[
+\boxed{[\mathbb B,V]=0.}
+\]
+So the optimal dephasing potential is in the spectral commutant of `mathbb B`.  This is the operator-level quotient required before any positive curvature-memory estimate.  The actual Cartan choice `Omega=A_u` is a distinguished competitor because `mathbb B_F+[A_u,mathbb B]` starts at the Bianchi-Riccati/Nijenhuis level, but it is not assumed to be the minimizer.

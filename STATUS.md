@@ -80,3 +80,5 @@ Further work on the Bogoliubov/dephasing route is now isolated in `quemanhmcr/ns
 }
 \]
 which separates the remaining problem into an infrared susceptibility gate and a fresh Cartan/Jacobi curvature-memory gate.  See `docs/09-critical-dephasing-flow-machine.md`.
+
+The raw fresh-memory bill has now been sharpened by quotienting all isospectral tangents before applying positivity: the current RHS is the gauge-minimal `mathcal H_sec`, whose minimizing dephasing potential commutes with `mathbb B`.  This isolates genuine spectral regeneration from inherited Euler rotation at the variational level.
