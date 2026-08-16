@@ -269,3 +269,19 @@ and therefore the representation-free sufficient majorant
 \]
 
 Thus `int_0^T T_J dt < infinity` would also close the minimal critical-action gap.  This historical torsion estimate is open.  The candidate mechanism uses the curl-Nijenhuis heat defect of `S_u=[J_u,C]` together with a backward-tent conjugate identity that removes inherited residual transport before any absolute values are taken; see `docs/07-torsion-conjugate-frontier.md`.
+
+### Finite-cutoff spectral-flow reduction
+
+A sharper **open endgame reduction**, presently justified on finite periodic curl cutoffs, uses
+\[
+\mathbb B_u=-\nu^{-1}C^{-1}A_u^\perp C^{-1},\qquad
+\Theta=\operatorname{Tr}(\mathbb B-I)_+^2.
+\]
+It satisfies
+\[
+\boxed{
+\partial_t\mathbb B=\nu\mathcal L_{dep}\mathbb B+\mathbb B_{F_E},\qquad
+\dot\Theta+\nu\mathcal I_\Theta=2\operatorname{Tr}((\mathbb B-I)_+\nabla_E\mathbb B),
+}
+\]
+with `mathcal I_Theta >= 0` and `nabla_E mathbb B=mathbb B_F+[A_u,mathbb B]`.  The isospectral commutator does not contribute to the spectral entropy, while Jacobi/Bianchi identities force the remaining secular source to start at genuine curl-curvature/Nijenhuis order.  Closing a curvature-memory absorption estimate plus an infrared no-collapse lemma would turn this reduction into a bound on persistent supercritical occupation.  Neither estimate is proved; see `docs/08-dephasing-spectral-endgame.md`.
