@@ -249,3 +249,23 @@ It is now sufficient to prove
 \]
 
 Heat-depth composition is already positive.  The unresolved step is cutoff-independent control of how the **actual Cartan/Jacobi Euler current** regenerates covariance toward `s=0` in physical time.  Ordinary energy dissipation alone cannot supply this critical bound by scaling.  No global-regularity claim is made until this estimate is proved.
+
+### Intrinsic torsion sharpening
+
+For `J=sgn C`, let `N_J(a,b)=[Ja,Jb]-J[Ja,b]-J[a,Jb]+[a,b]`.  The full helicity-Nijenhuis torsion gives the exact identity
+
+\[
+\boxed{\langle u,N_J(u,\Lambda u)\rangle=2\kappa}
+\]
+
+and therefore the representation-free sufficient majorant
+
+\[
+\boxed{
+\mathcal A_K\le
+\mathcal T_J(u):=
+\frac{\|\Lambda^{-1/2}N_J(u,\Lambda u)\|_2^2}{4M_3}.
+}
+\]
+
+Thus `int_0^T T_J dt < infinity` would also close the minimal critical-action gap.  This historical torsion estimate is open.  The candidate mechanism uses the curl-Nijenhuis heat defect of `S_u=[J_u,C]` together with a backward-tent conjugate identity that removes inherited residual transport before any absolute values are taken; see `docs/07-torsion-conjugate-frontier.md`.

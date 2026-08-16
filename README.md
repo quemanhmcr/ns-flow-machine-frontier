@@ -390,6 +390,17 @@ What is forbidden as a proof device:
 
 The unresolved loophole is **coherent many-interaction cancellation/recycling**.
 
+A current sharpening isolates productive critical current in the full helicity-Nijenhuis torsion,
+
+\[
+\langle u,N_J(u,\Lambda u)\rangle=2\kappa,
+\qquad
+\mathcal A_K\le
+\frac{\|\Lambda^{-1/2}N_J(u,\Lambda u)\|_2^2}{4M_3}.
+\]
+
+The corresponding historical estimate is still open.  A conjugate backward-heat-tent identity now removes inherited residual transport exactly before cyclic Cartan/Jacobi grouping; see [`docs/07-torsion-conjugate-frontier.md`](docs/07-torsion-conjugate-frontier.md).
+
 See [`THEOREM.md`](THEOREM.md) for the exact frontier and [`docs/`](docs/) for the derivation chain.
 
 ## Provenance
