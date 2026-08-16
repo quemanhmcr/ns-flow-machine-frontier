@@ -544,3 +544,52 @@ This is only a calibration, not a many-mode theorem.  Summing the displayed tria
 }
 \]
 (or a sharper current-level version) obtained **after** full Cartan/Hodge assembly.  A proof of such an estimate must use the cross-Riccati same-helicity driver as a full operator, not a positive triad sum.  Failure of this operator lift would mean that the flow machine remains a useful reformulation but does not yet supply the missing positive-composition mechanism.
+
+## 14. Standalone sector absorption is falsified by an actual Galerkin driver family
+
+A scale-correct self-absorption candidate is
+
+\[
+\mathfrak S(u):=
+\frac{\mathcal H_{sec}(u)\,\mathcal H_{IR}(u)}{(\Theta(u)+\Phi(u))^2}.
+\]
+
+With the odd soft threshold conventions above, dephasing plus optimal Hodge Cauchy would close
+instantaneously if `mathfrak S<=4 nu^2`.  This is **false** even before any continuum limit.
+
+Take the full Fourier ball `|k|<=2` and an actual reality-paired heterochiral triad with wavevectors
+`(1,0,0)`, `(0,1,0)`, `(-1,-1,0)` and helicities `(-,+,+)`.  Hold the two pair-support amplitudes fixed,
+keep a fixed nonzero phase, and increase only the remaining driver amplitude.  The full retained
+critical Reynolds operator, its Euler source, the dephasing Hodge minimizer and the Kirchhoff normal
+equation are all evaluated on the whole Fourier ball, not on a compressed three-mode matrix.
+For driver amplitudes `0.25,0.5,1,2,4` the computed sector ratios are respectively
+
+\[
+0.2075,\quad0.5302,\quad1.2737,\quad3.2645,\quad8.7131,
+\]
+
+while the relative Kirchhoff residual stays below `2.4e-15`.  Larger drivers remain above the
+absorption threshold in the same audit.
+
+Thus the Hodge quotient removes isospectral rotation but does **not** remove the independent physical
+driver reservoir.  The isolated-triad formula already explains the mechanism: secular spectral
+production is a minimal action whose numerator contains the same-helicity driver current.  Repeated
+regeneration cannot be paid by spectral dephasing alone; the driver stock/inflow history must enter.
+
+There is a second guard.  A material-stress estimate of the form
+
+\[
+|\operatorname{Tr}(G\,\mathbb B_F)|^2
+\lesssim Z\,E_G(1+\Theta)
+\]
+
+has the wrong continuum Navier--Stokes scaling: under `u_lambda(x)=lambda u(lambda x)`, the left side
+scales like `lambda^4` whereas `Z E_G` scales like `lambda^3`.  Material pullback remains a useful
+interpretation of the source, but an `L_t^2 L_x^2` strain budget cannot by itself be the critical
+endgame.
+
+**Verdict.**  The flow/dephasing machinery survives as a canonical *demand meter*: `H_sec` is the
+minimal eigenvalue-changing regeneration cost after all isospectral recycling is quotiented.  It is
+not a closed entropy mechanism.  Any endgame must couple this demand to a representation-free
+historical accounting of the actual driver energy/current; otherwise the family above is an explicit
+finite-dimensional obstruction.
