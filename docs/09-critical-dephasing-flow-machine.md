@@ -219,3 +219,157 @@ For the threshold occupation `Upsilon=Tr(Q-I)_+` and `P=1_{Q>1}`, at threshold-r
 }
 \]
 Both heat terms on the left are nonnegative.  This identity is presently a diagnostic rather than the chosen smooth entropy: the sharp projector `P` has a threshold singularity, while `Theta` has the firmly-nonexpansive soft-threshold gradient needed for the clean `H^{-1}` absorption above.
+
+## 10. Spectral resistor network and odd soft-threshold normal form
+
+Work at a threshold-regular time and first assume the spectrum of `mathbb B` is simple,
+\[
+\mathbb B e_a=\beta_a e_a.
+\]
+Set
+\[
+c_{ab}:=\sum_{j=1}^3|\langle e_a,X_je_b\rangle|^2,
+\qquad
+(\Delta_c z)_a:=2\sum_b c_{ab}(z_a-z_b).
+\]
+If `V=L^{-1}S_*` is the optimal dephasing potential from Section 8 and `V e_a=v_a e_a`, then the Hodge equation is the Kirchhoff law
+\[
+\boxed{
+y_a:=\langle e_a,\mathbb B_{F_E}e_a\rangle=(\Delta_c v)_a,
+\qquad
+\mathcal H_{sec}=\sum_{a,b}c_{ab}(v_a-v_b)^2.
+}
+\]
+The heat part has the same graph Laplacian:
+\[
+\boxed{
+\dot\beta_a=-\nu(\Delta_c\beta)_a+(\Delta_c v)_a.
+}
+\]
+Thus the eigenvalue motion is a time-dependent resistor-network diffusion forced by the secular Euler voltage.
+
+Because `J mathbb B J=-mathbb B` and `[J,X_j]=0`, the spectral graph has the involution `beta -> -beta`.  The source `mathbb B_F` is odd under the same involution.  By parity orthogonality the minimizing potential can be chosen odd.  Hence it is natural to replace the one-sided threshold gradient by the odd soft-threshold
+\[
+\boxed{
+G:=\operatorname{sgn}(\mathbb B)(|\mathbb B|-I)_+.
+}
+\]
+On the `J`-odd manifold,
+\[
+\boxed{
+\Theta=\tfrac12\|G\|_{HS}^2,
+\qquad
+\Phi=\tfrac12\operatorname{Tr}|G|.
+}
+\]
+Let
+\[
+\mathcal E_c(f,g):=\sum_{a,b}c_{ab}(f_a-f_b)(g_a-g_b).
+\]
+Then the exact entropy law becomes
+\[
+\boxed{
+\dot\Theta+\nu\mathcal E_c(G,\beta)=\mathcal E_c(G,v).
+}
+\]
+The scalar soft-threshold map is firmly nonexpansive, so
+\[
+\mathcal E_c(G,\beta)\ge \mathcal E_c(G,G).
+\]
+Moreover `mathbb B` has no zero-carrier component.  Carrier integration by parts gives
+\[
+2(\Theta+\Phi)=\langle G,\mathbb B\rangle_{HS},
+\]
+and therefore
+\[
+\boxed{
+\mathcal E_c(G,G)\ge
+\frac{4(\Theta+\Phi)^2}{\mathcal H_{IR}}.
+}
+\]
+This is the parity-sharpened noncommutative Nash inequality.
+
+The network law also admits an exact passivity completion.  Put
+\[
+E_G:=\mathcal E_c(G,G),\qquad
+E_{th}:=\mathcal E_c(G,\beta-G)\ge0,
+\qquad
+J_G:=\mathcal E_c(G,v).
+\]
+Then
+\[
+\boxed{
+\dot\Theta+\nu E_G+\nu E_{th}=J_G.
+}
+\]
+Equivalently, with
+\[
+\mathcal A_G:=\frac{J_G^2}{E_G}
+\]
+when `E_G>0`,
+\[
+\boxed{
+\dot\Theta+\nu E_{th}
+=\frac1{4\nu}\left[
+\mathcal A_G-
+\frac{(J_G-2\nu E_G)^2}{E_G}
+\right].
+}
+\]
+Thus the flow machine produces a second minimal-action/reflection identity, now on the dephasing spectral graph.  Only the rank-one projection of the secular voltage onto the odd threshold gradient can grow `Theta`; all Dirichlet-orthogonal secular memory is nonproductive.
+
+Finally use the intrinsic heat clock
+\[
+d\sigma=\nu m\,dt,\qquad m=M_3/K,
+\]
+and the normalized conductances `bar c_ab=c_ab/m`, voltage `w=v/nu`.  Then
+\[
+\boxed{
+\partial_\sigma\beta=-\Delta_{\bar c}(\beta-w),
+}
+\]
+so the supercritical spectral problem is dimensionless.  Infrared collapse is precisely degeneration of the normalized conductances `|k-l|^2/m`; efficient regeneration requires the normalized secular voltage to align with the odd soft-threshold gradient.  These are now the two explicit rigidity defects to be classified.
+
+For degenerate eigenvalues the same statement must be written with spectral blocks and a matrix-valued commutant potential; the simple-spectrum formula above is the audited finite-cutoff normal form, not yet a continuum theorem.
+
+## 11. Equality rigidity: no continuum supercritical dephasing soliton
+
+The odd soft-threshold admits the complementary clipping decomposition
+\[
+G=\operatorname{soft}_1(\mathbb B),\qquad
+H=\mathbb B-G=\operatorname{clip}_{[-1,1]}(\mathbb B).
+\]
+The threshold defect from Section 10 is
+\[
+\boxed{
+E_{th}=\sum_j\langle[X_j,G],[X_j,H]\rangle_{HS}\ge0.
+}
+\]
+In a spectral basis its summands are
+\[
+\sum_{a,b}c_{ab}
+\bigl(g(\beta_a)-g(\beta_b)\bigr)
+\bigl(h(\beta_a)-h(\beta_b)\bigr),
+\]
+where `g=soft_1` and `h=clip_[-1,1]`; every scalar factor is nonnegative.
+
+Assume there is no eigenvalue at `+/-1`.  If `E_th=0`, every dephasing edge joining a positive supercritical eigenvalue to its complement, or a negative supercritical eigenvalue to its complement, has zero conductance.  Therefore
+\[
+\boxed{
+[X_j,P_+]=[X_j,P_-]=0,
+\qquad
+P_+=1_{\{\mathbb B>1\}},\quad
+P_-=1_{\{\mathbb B<-1\}}.
+}
+\]
+Thus exact zero threshold leakage forces the supercritical spectral subspaces to be decoherence-free for all carrier-coordinate generators.
+
+This yields an exact continuum equality rigidity.  Suppose the carrier Hilbert space is `L^2(R^3_k;C^m)`, `X_j` is multiplication by `k_j`, and `mathbb B` is compact.  Then `P_+` and `P_-` have finite rank.  A finite-rank projection commuting with all coordinate multipliers on the atomless carrier measure must vanish.  Hence
+\[
+\boxed{E_{th}=0\quad\Longrightarrow\quad P_+=P_-=0}
+\]
+under these continuum assumptions.  In particular there is no nonzero exact supercritical dephasing soliton with zero threshold leakage.
+
+The near-equality interpretation is equally important.  If the active spectrum is separated from the threshold by a margin `delta>0`, then small `E_th` forces the corresponding spectral projector to almost commute with the `X_j`.  For a rank-one projector this commutator norm is exactly a Fourier-carrier variance.  Thus a near-lossless supercritical mode must become a narrow carrier packet.  This identifies the infrared/affine WKB-Kelvin branch as the quantitative near-equality model, rather than an independently postulated case split.
+
+The periodic lattice has atoms, so the exact finite-rank argument above does not apply verbatim there.  The expected blow-up-scale use is through rescaling, where the carrier lattice spacing tends to zero and the continuum rigidity is the candidate limiting no-soliton statement.  Turning this into a compactness theorem remains open.

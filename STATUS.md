@@ -82,3 +82,8 @@ Further work on the Bogoliubov/dephasing route is now isolated in `quemanhmcr/ns
 which separates the remaining problem into an infrared susceptibility gate and a fresh Cartan/Jacobi curvature-memory gate.  See `docs/09-critical-dephasing-flow-machine.md`.
 
 The raw fresh-memory bill has now been sharpened by quotienting all isospectral tangents before applying positivity: the current RHS is the gauge-minimal `mathcal H_sec`, whose minimizing dephasing potential commutes with `mathbb B`.  This isolates genuine spectral regeneration from inherited Euler rotation at the variational level.
+
+The optimal Hodge equation has now been reduced, at simple finite-cutoff spectrum, to a time-dependent spectral resistor network.  Using the odd soft-threshold `G=sgn(mathbb B)(|mathbb B|-I)_+`, the entropy obeys a second exact minimal-action/reflection identity whose denominator is the dephasing Dirichlet energy.  This removes all secular memory orthogonal to the entropy gradient and sharpens the no-collapse gate to normalized conductance degeneration versus threshold-voltage alignment.
+
+
+An equality-rigidity test is now available: zero soft-threshold leakage forces the supercritical spectral projectors to commute with all carrier-coordinate generators.  For a compact amplifier on continuous carrier space this is incompatible with a nonzero finite-rank supercritical projector.  Near equality therefore forces narrow Fourier packets, identifying the affine/WKB-Kelvin regime as the quantitative no-collapse model rather than an ad hoc extra branch.
