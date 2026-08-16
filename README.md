@@ -412,3 +412,7 @@ This repository is a fresh Git root distilled from the research state whose matc
 in `quemanhmcr/wang-ns-triad-diamond` (Draft PR #6 history).
 
 No Git history was imported. See [`PROVENANCE.md`](PROVENANCE.md).
+
+## Flow-machine continuation
+
+The independent continuation after upstream commit `444ea28` is developed in this repository itself; see `FLOW_PROVENANCE.md` and `docs/09-critical-dephasing-flow-machine.md`.  The original `ns-positive-composition-frontier` repository is treated as upstream and is no longer modified by this research branch.

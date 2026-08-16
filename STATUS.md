@@ -69,3 +69,14 @@ For `R=(mathbb B-I)_+` and `Theta=Tr R^2`, one has
 \boxed{\dot\Theta+\nu\mathcal I_\Theta=2\operatorname{Tr}(R\nabla_E\mathbb B),\qquad \mathcal I_\Theta\ge0,}
 \]
 where `nabla_E mathbb B=mathbb B_F+[A_u,mathbb B]`; the commutator term is isospectral and vanishes from the trace.  Jacobi reduces `nabla_E mathbb B` to quadratic curl curvature/Nijenhuis composition, so bare one-step regeneration is absent from the endgame.  The two remaining open gates are a curvature-memory absorption estimate and an infrared no-collapse lemma.  See `docs/08-dephasing-spectral-endgame.md`.
+
+## Independent flow-machine branch
+
+Further work on the Bogoliubov/dephasing route is now isolated in `quemanhmcr/ns-flow-machine-frontier`.  The first new result is the scalar finite-cutoff inequality
+\[
+\boxed{
+\dot\Theta+\nu\frac{(\Theta+\Phi)^2}{\mathcal H_{IR}}
+\le\frac{\mathcal H_{mem}}\nu,
+}
+\]
+which separates the remaining problem into an infrared susceptibility gate and a fresh Cartan/Jacobi curvature-memory gate.  See `docs/09-critical-dephasing-flow-machine.md`.
