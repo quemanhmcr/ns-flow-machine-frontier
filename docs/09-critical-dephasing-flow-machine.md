@@ -160,3 +160,62 @@ hence the weighted Coulomb/horizontal condition
 \boxed{[\mathbb B,V]=0.}
 \]
 So the optimal dephasing potential is in the spectral commutant of `mathbb B`.  This is the operator-level quotient required before any positive curvature-memory estimate.  The actual Cartan choice `Omega=A_u` is a distinguished competitor because `mathbb B_F+[A_u,mathbb B]` starts at the Bianchi-Riccati/Nijenhuis level, but it is not assumed to be the minimizer.
+
+## 8. Dephasing Hodge decomposition on the spectral orbit
+
+The minimization defining `mathcal H_sec` is a weighted horizontal/vertical decomposition.  At a minimizer, let
+\[
+V=L^{-1}(\mathbb B_{F_E}+[\Omega_*,\mathbb B]).
+\]
+Then
+\[
+\boxed{
+\mathbb B_{F_E}=LV-[\Omega_*,\mathbb B],
+\qquad [\mathbb B,V]=0.
+}
+\]
+The first term is the secular direction seen by dephasing; the second is a pure isospectral tangent.  The normal equation for the gauge is
+\[
+\boxed{
+[\mathbb B,L^{-1}[\Omega_*,\mathbb B]]
+=-[\mathbb B,L^{-1}\mathbb B_{F_E}].
+}
+\]
+It is linear in `Omega_*` for fixed `mathbb B` and is unique modulo the stabilizer of `mathbb B` once the zero-carrier constraint and an orthogonality convention are fixed.  The Pythagorean identity for the weighted quadratic functional shows that every other admissible gauge pays `mathcal H_sec` plus a nonnegative vertical excess.
+
+The physical choice `Omega=A_u` converts the raw source into the covariant source `nabla_E mathbb B=mathbb B_F+[A_u,mathbb B]`.  The Bianchi-Riccati identity in `docs/08-dephasing-spectral-endgame.md` shows that this distinguished competitor begins at curl-curvature/Nijenhuis composition rather than bare one-step transport.  The remaining task is to compare the optimal Hodge gauge to this physical Cartan gauge without taking occurrence-wise absolute values.
+
+## 9. Pair-Gram Loewner law
+
+Because `J mathbb B J=-mathbb B`, write in helicity blocks
+\[
+\mathbb B=\begin{pmatrix}0&T\\T^*&0\end{pmatrix}.
+\]
+Let `X_{j,+/-}` be the translation generators on the two helicity sectors,
+\[
+\delta_jT=X_{j,+}T-TX_{j,-},\qquad
+L_TT=\sum_j\delta_j^2T,
+\]
+and set `Q=T^*T`.  The dephasing equation gives
+\[
+T_t=-\nu L_TT+T_F.
+\]
+A direct product calculation yields
+\[
+\boxed{
+Q_t=-\nu L_-Q-2\nu\Gamma_T+T_F^*T+T^*T_F,
+\qquad
+\Gamma_T:=\sum_j(\delta_jT)^*(\delta_jT)\succeq0,
+}
+\]
+where `L_-Q=sum_j[X_{j,-},[X_{j,-},Q]]`.  Thus viscosity produces a genuine Loewner-negative pair-decoherence square, not merely trace-convex damping.
+
+For the threshold occupation `Upsilon=Tr(Q-I)_+` and `P=1_{Q>1}`, at threshold-regular times,
+\[
+\boxed{
+\dot\Upsilon+\nu\operatorname{Tr}(P L_-Q)
++2\nu\operatorname{Tr}(P\Gamma_T)
+=2\Re\operatorname{Tr}(P T^*T_F).
+}
+\]
+Both heat terms on the left are nonnegative.  This identity is presently a diagnostic rather than the chosen smooth entropy: the sharp projector `P` has a threshold singularity, while `Theta` has the firmly-nonexpansive soft-threshold gradient needed for the clean `H^{-1}` absorption above.
