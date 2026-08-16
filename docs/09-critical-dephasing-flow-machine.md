@@ -159,7 +159,7 @@ hence the weighted Coulomb/horizontal condition
 \[
 \boxed{[\mathbb B,V]=0.}
 \]
-So the optimal dephasing potential is in the spectral commutant of `mathbb B`.  This is the operator-level quotient required before any positive curvature-memory estimate.  The actual Cartan choice `Omega=A_u` is a distinguished competitor because `mathbb B_F+[A_u,mathbb B]` starts at the Bianchi-Riccati/Nijenhuis level, but it is not assumed to be the minimizer.
+So the optimal dephasing potential is in the spectral commutant of `mathbb B`.  This is the operator-level quotient required before any positive curvature-memory estimate.  The admissible physical Cartan competitor is the `g`-skew helicity-preserving part `Omega=A_u^parallel`.  The helicity-mixing part is `g`-self-adjoint and is not an isospectral Hodge generator; it is entropy-invisible only by parity.  The resulting covariant source is audited in Section 12.
 
 ## 8. Dephasing Hodge decomposition on the spectral orbit
 
@@ -183,7 +183,7 @@ The first term is the secular direction seen by dephasing; the second is a pure 
 \]
 It is linear in `Omega_*` for fixed `mathbb B` and is unique modulo the stabilizer of `mathbb B` once the zero-carrier constraint and an orthogonality convention are fixed.  The Pythagorean identity for the weighted quadratic functional shows that every other admissible gauge pays `mathcal H_sec` plus a nonnegative vertical excess.
 
-The physical choice `Omega=A_u` converts the raw source into the covariant source `nabla_E mathbb B=mathbb B_F+[A_u,mathbb B]`.  The Bianchi-Riccati identity in `docs/08-dephasing-spectral-endgame.md` shows that this distinguished competitor begins at curl-curvature/Nijenhuis composition rather than bare one-step transport.  The remaining task is to compare the optimal Hodge gauge to this physical Cartan gauge without taking occurrence-wise absolute values.
+The admissible physical choice is `Omega=A_u^parallel`; Section 12 records the parity correction and the resulting covariant source.  The remaining task is to compare the optimal Hodge gauge to that corrected physical Cartan gauge without taking occurrence-wise absolute values.
 
 ## 9. Pair-Gram Loewner law
 
@@ -373,3 +373,174 @@ under these continuum assumptions.  In particular there is no nonzero exact supe
 The near-equality interpretation is equally important.  If the active spectrum is separated from the threshold by a margin `delta>0`, then small `E_th` forces the corresponding spectral projector to almost commute with the `X_j`.  For a rank-one projector this commutator norm is exactly a Fourier-carrier variance.  Thus a near-lossless supercritical mode must become a narrow carrier packet.  This identifies the infrared/affine WKB-Kelvin branch as the quantitative near-equality model, rather than an independently postulated case split.
 
 The periodic lattice has atoms, so the exact finite-rank argument above does not apply verbatim there.  The expected blow-up-scale use is through rescaling, where the carrier lattice spacing tends to zero and the continuum rigidity is the candidate limiting no-soliton statement.  Turning this into a compactness theorem remains open.
+
+## 11. Midpoint-transform audit: what the flow machine does and does not buy
+
+After conjugating the `g`-self-adjoint amplifier to the standard Hilbert representation, it is exactly the critical Reynolds operator from the midpoint transform
+\[
+T(u)=\mathcal Q_c(u)=\tfrac12\Lambda^{-1/2}[J_u,J]\Lambda^{-1/2},
+\qquad
+\widehat{\mathbb B_u}=\nu^{-1}T(u).
+\]
+The audited continuum identities are
+\[
+T^*T=\Lambda/64,
+\qquad
+\langle T(u),T(v)\rangle_{HS}=\tfrac1{64}\langle u,\Lambda v\rangle,
+\qquad
+LT(u)=T(C^2u).
+\]
+Consequently the infrared susceptibility is not a new unknown:
+\[
+\boxed{
+\mathcal H_{IR}
+=\langle\mathbb B,L^{-1}\mathbb B\rangle_{HS}
+=\frac1{64\nu^2}\langle u,\Lambda^{-1}u\rangle.
+}
+\]
+On a periodic mean-zero domain with lowest absolute-curl frequency `lambda_1>0`,
+\[
+\mathcal H_{IR}\le \frac{E}{64\nu^2\lambda_1},
+\]
+so the infrared denominator in the Nash estimate is energy-controlled.  The corresponding raw source memory is
+\[
+\boxed{
+\mathcal H_{mem}
+=\frac1{64\nu^2}\|\Lambda^{-1/2}F_E\|_2^2,
+}
+\]
+which is exactly the old critical Hilbert currency and has no known finite energy budget.
+
+For the odd soft threshold `G`, define its physical preimage
+\[
+\psi_G:=64\Lambda^{-1}T^*G.
+\]
+Since the closed range of `T` reduces `L`,
+\[
+\boxed{
+J_G=\operatorname{Tr}(G\mathbb B_{F_E})
+=\frac1{64\nu}\langle\Lambda\psi_G,F_E\rangle,
+}
+\]
+and
+\[
+\boxed{
+K(\psi_G)\le128\Theta,
+\qquad
+M_3(\psi_G)\le64E_G.
+}
+\]
+Thus the second minimal action obeys only the generic estimate
+\[
+\boxed{
+\mathcal A_G=\frac{J_G^2}{E_G}
+\le\frac1{64\nu^2}\|\Lambda^{-1/2}F_E\|_2^2.
+}
+\]
+This is not a closure: after Cauchy the flow machine collapses back to the previously open critical Hilbert action.  Any genuine gain must therefore come from the **isospectral Hodge quotient** `mathcal H_sec`, not from the threshold transform followed by a pointwise norm bound.
+
+There is also an exact clipping decomposition.  If
+\[
+H=\operatorname{clip}_{[-1,1]}(\mathbb B),
+\qquad
+\eta_H:=64\Lambda^{-1}T^*H,
+\]
+then
+\[
+\boxed{\psi_G+\eta_H=u/\nu}
+\]
+and hence
+\[
+\boxed{
+J_G=\frac{\kappa}{64\nu^2}
+-\frac1{64\nu}\langle\Lambda\eta_H,F_E\rangle.
+}
+\]
+Thus the soft-threshold source is an exact spectral partition of the original critical Euler current, not a new independent current.
+
+## 12. Parity guard on the Bianchi--Riccati source
+
+In the physical Hodge comparison the admissible isospectral generator is the `g`-skew helicity-preserving part `A^parallel`, not the full `A=ad_u`; `A^perp` is `g`-self-adjoint.  Because `G` and `mathbb B_{F_E}` are helicity-odd, the even term `[A^perp,mathbb B]` is invisible in the entropy pairing.  The distinguished physical covariant source is therefore
+\[
+\boxed{
+S_{phys}=\mathbb B_{F_E}+[A^\parallel,\mathbb B],
+\qquad
+J_G=\operatorname{Tr}(G S_{phys}).
+}
+\]
+This corrects the earlier shorthand that treated the full `A` as an admissible skew Hodge competitor.
+
+The positive Riccati square does not directly feed the odd secular source.  With
+\[
+\mathcal K=\mathcal K^\parallel+\mathcal K^\perp,
+\]
+parity gives
+\[
+\boxed{
+(-\mathcal K^2)^\perp
+=-\{\mathcal K^\parallel,\mathcal K^\perp\},
+\qquad
+[-(\mathcal K^\perp)^2]^\perp=0.
+}
+\]
+Hence the positive square `-(mathcal K^perp)^2` found in the Bochner audit is not the term that can pay `J_G`; the surviving one-triad spectral regeneration is the signed cross-Riccati interaction between within-helicity curl shear and helicity mixing.
+
+For an isolated heterochiral block with signed curl values `(-a,b,c)` and positive pair singular value `s>1`, the already audited law
+\[
+(s^2)'_E=\frac{\kappa_\triangle}{\nu^2abc}
+\]
+gives
+\[
+\boxed{
+J_G=\dot\Theta_E
+=\frac{s-1}{s}\frac{\kappa_\triangle}{\nu^2abc}.
+}
+\]
+Thus the secular source is genuinely nonzero on one triad.  It vanishes at `b=c`; the driver is the same-helicity signed-curl shear `(b-c)`.  Fourier triangle geometry gives `|b-c|<=a`, so occurrence-wise the driver gap is paid by the quadratic heat of its carrier.  Promoting that fact to a full-state estimate without positive occurrence traffic is now the precise remaining structural question.
+
+## 13. Isolated-triad Hodge calibration and the next non-gross target
+
+The Hodge quotient is genuinely smaller than the raw critical Hilbert source already on one productive heterochiral triad.  Take signed curl values `(-a,b,c)`, `a,b,c>0`, and write the modal amplitudes as `(x,y,z)`.  In the standard critical Hilbert representation the pair block is a two-component star with positive singular value
+\[
+s^2=\frac{b|y|^2+c|z|^2}{abc\nu^2}.
+\]
+For `s>1`, the odd soft threshold is `(s-1)/s` times that block.  Optimizing the weighted dephasing memory over the single within-positive-helicity rotation removes the orientation derivative and leaves
+\[
+\boxed{
+\mathcal H_{sec}^{\triangle}
+=\mathcal A_G^{\triangle}
+=\frac{\kappa_\triangle^2}
+{2\nu^2abc\,(b^3|y|^2+c^3|z|^2)}.
+}
+\]
+Thus in the one-secular-direction model the Hodge Cauchy inequality is an equality: the quotient retains exactly the eigenvalue-changing source and discards the orthogonal pair rotation.
+
+There is also a direct driver-heat estimate.  Using
+\[
+\frac{\mathcal H_{sec}^{\triangle}}{a^2|x|^2s^2}
+=
+\frac{2(b-c)^2|y|^2|z|^2}
+{(b^3|y|^2+c^3|z|^2)(b|y|^2+c|z|^2)},
+\]
+and
+\[
+(b^3|y|^2+c^3|z|^2)(b|y|^2+c|z|^2)
+\ge bc(b^2+c^2)|y|^2|z|^2,
+\]
+one obtains, on a periodic domain with `a,b,c>=lambda_1>0`,
+\[
+\mathcal H_{sec}^{\triangle}
+\le \frac{2}{\lambda_1^2}a^2|x|^2s^2
+\le \boxed{\frac{4}{\lambda_1^2}Z_\triangle(1+\Theta_\triangle)}.
+\]
+The first inequality uses `(b-c)^2<=b^2+c^2`; the second uses `s=1+sqrt(Theta_triangle)` on the supercritical branch.  Hence the secular spectral source on one triad is paid by the quadratic heat of the same-helicity driver, after the Hodge quotient removes orientation motion.
+
+This is only a calibration, not a many-mode theorem.  Summing the displayed triad bound occurrence by occurrence would recreate the forbidden gross-traffic budget.  The next live test of the flow machine is therefore the representation-free operator analogue
+\[
+\boxed{
+\mathcal H_{sec}(u)
+\stackrel{?}{\lesssim}
+\lambda_1^{-2} Z(u)\,[1+\Theta(\mathbb B_u)]
+}
+\]
+(or a sharper current-level version) obtained **after** full Cartan/Hodge assembly.  A proof of such an estimate must use the cross-Riccati same-helicity driver as a full operator, not a positive triad sum.  Failure of this operator lift would mean that the flow machine remains a useful reformulation but does not yet supply the missing positive-composition mechanism.

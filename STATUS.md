@@ -87,3 +87,12 @@ The optimal Hodge equation has now been reduced, at simple finite-cutoff spectru
 
 
 An equality-rigidity test is now available: zero soft-threshold leakage forces the supercritical spectral projectors to commute with all carrier-coordinate generators.  For a compact amplifier on continuous carrier space this is incompatible with a nonzero finite-rank supercritical projector.  Near equality therefore forces narrow Fourier packets, identifying the affine/WKB-Kelvin regime as the quantitative no-collapse model rather than an ad hoc extra branch.
+## Midpoint-transform audit of the flow branch
+
+In the independent Flow-machine branch, the amplifier is exactly the previously audited critical midpoint/Reynolds transform: after the `g`-to-Hilbert conjugation, `mathbb B=nu^{-1} T(u)` with `T^*T=Lambda/64` and `L T(u)=T(C^2u)`.  Therefore
+\[
+\mathcal H_{IR}=\frac1{64\nu^2}\langle u,\Lambda^{-1}u\rangle,
+\qquad
+\mathcal H_{mem}=\frac1{64\nu^2}\|\Lambda^{-1/2}F_E\|_2^2.
+\]
+The first is energy-controlled on a periodic mean-zero domain; the second is the old unresolved critical Hilbert currency.  Thus thresholding followed by Cauchy gives no new closure.  The only genuine possible gain is the isospectral Hodge quotient `mathcal H_sec`.  On one heterochiral triad that quotient equals the productive spectral action exactly and obeys a driver-heat bound `H_sec^triangle <= 4 lambda_1^{-2} Z_triangle(1+Theta_triangle)`.  The current live test is whether an operator/full-state version exists without occurrence-wise positive traffic.
